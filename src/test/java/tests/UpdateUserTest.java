@@ -14,6 +14,7 @@ public class UpdateUserTest extends BaseTest {
 
         given()
                 .header("Content-Type", "application/json")
+                .header("x-api-key", "reqres-free-v1")
                 .body(payload)
                 .when()
                 .put("/users/2")

@@ -10,6 +10,7 @@ public class DeleteUserTest extends BaseTest {
     @Test(description = "Verify Delete User API")
     public void deleteUser() {
         given()
+                .header("x-api-key", "reqres-free-v1")
                 .when()
                 .delete("/users/2")
                 .then()

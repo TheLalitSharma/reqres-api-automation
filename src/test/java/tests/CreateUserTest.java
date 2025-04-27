@@ -1,6 +1,7 @@
 package tests;
 
 import io.restassured.RestAssured;
+import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
@@ -14,6 +15,7 @@ public class CreateUserTest extends BaseTest {
 
         given()
                 .header("Content-Type", "application/json")
+                .header("x-api-key", "reqres-free-v1")
                 .body(payload)
                 .when()
                 .post("/users")
